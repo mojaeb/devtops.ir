@@ -3,7 +3,7 @@ module.exports = {
     title: "devtops-ir",
   },
   plugins: [
-    "gatsby-plugin-sass",
+    // "gatsby-plugin-sass",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
@@ -25,6 +25,7 @@ module.exports = {
       },
       __key: "images",
     },
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -32,6 +33,6 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    },
+    }, 
   ],
 };
