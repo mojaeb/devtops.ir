@@ -3,7 +3,9 @@ module.exports = {
     title: "devtops-ir",
   },
   plugins: [
-    // "gatsby-plugin-sass",
+    // "gatsby-plugin-sass", // current unused sass file
+                            // when intend to create sass you can remove comment and enable
+    'gatsby-plugin-postcss',
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
