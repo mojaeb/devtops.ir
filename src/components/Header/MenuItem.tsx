@@ -16,10 +16,10 @@ const MenuItem: React.FC<IMenuItemProps> = (
         textType = 'text-base',
     }) => {
     const classes = [
-        "text-gray-500",
+        "text-gray-600",
         "hover:text-blue-600",
         display,
-        "px-3",
+        "px-2",
         "py-2",
         "rounded-md",
         textType,
