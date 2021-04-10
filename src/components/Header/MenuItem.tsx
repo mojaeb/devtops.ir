@@ -6,6 +6,7 @@ interface IMenuItemProps {
     display?: 'inline' | 'block';
     textType?: 'text-sm' | "text-base",
     name: string,
+    children?: React.ReactNode,
 }
 
 const MenuItem: React.FC<IMenuItemProps> = (
@@ -14,13 +15,13 @@ const MenuItem: React.FC<IMenuItemProps> = (
         name,
         display = "inline",
         textType = 'text-base',
+        children,
     }) => {
     const classes = [
         "text-gray-600",
         "hover:text-blue-600",
         display,
         "px-2",
-        "py-2",
         "rounded-md",
         textType,
         "font-medium"
@@ -30,6 +31,7 @@ const MenuItem: React.FC<IMenuItemProps> = (
             to={to}
             className={classes.join(" ")}>
             {name}
+            {children}
         </Link>
     )
 };
