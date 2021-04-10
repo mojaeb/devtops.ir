@@ -2,7 +2,7 @@
 title: how to create gatsby project
 created_at: 4-8-2021
 category: gatsby
-tags: ["react", "gatsby", "javascript"]
+tags: react, gatsby, javascript, ssg
 author: mojaeb
 ---
 

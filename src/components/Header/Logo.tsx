@@ -15,7 +15,7 @@ const Logo: React.FC<ILogoProps> = (
     }) => {
     return (
         <div
-            className="flex-shrink-0 flex items-center h-9"
+            className="flex-shrink-0 flex items-center h-10 w-14"
         >
             <Img
                 fixed={largeSrc}
