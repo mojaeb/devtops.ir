@@ -1,3 +1,18 @@
+@import "./home-page.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@font-face {
+    font-family: sample;
+    src: url("./fonts/iranyekanwebregular.woff2");
+}
+
+body {
+    font-family: sample, serif;
+}
+
+
