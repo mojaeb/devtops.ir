@@ -3,7 +3,6 @@ import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 import {graphql, useStaticQuery} from "gatsby";
 import {RiSearchLine} from 'react-icons/ri'
-// import {GatsbyImageProps} from 'gatsby-image'
 
 
 const MENU_ITEMS = [
@@ -12,7 +11,8 @@ const MENU_ITEMS = [
     {name: "درباره ما", url: "/project"},
 ];
 
-interface IHeaderProps {}
+interface IHeaderProps {
+}
 
 
 const Header: React.FC<IHeaderProps> = () => {
@@ -28,15 +28,13 @@ const Header: React.FC<IHeaderProps> = () => {
         }
     `);
     return (
-        <nav
-            // className="shadow-md"
-        >
+        <nav className={"header-container bg-white sticky top-0"}>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                        <Logo largeSrc={data.file?.childImageSharp?.fixed} />
+                        <Logo largeSrc={data.file?.childImageSharp?.fixed}/>
                         <div className={"flex space-x-4 space-x-reverse items-center"}>
-                            <p className={"px-6 font-bold text-lg text-gray-600"}>DEVTOPS</p>
+                            <p className={"px-6 font-bold text-lg text-gray-600 tracking-widest"}>DEVTOPS</p>
                         </div>
                     </div>
                     <div className="hidden sm:block sm:mr-6">
@@ -49,7 +47,7 @@ const Header: React.FC<IHeaderProps> = () => {
                                 />
                             ))}
                             <button className={"pr-10"}>
-                                <RiSearchLine size={23} />
+                                <RiSearchLine size={23}/>
                             </button>
 
                         </div>
@@ -69,6 +67,6 @@ const Header: React.FC<IHeaderProps> = () => {
             </div>
         </nav>
     )
-}
+};
 
 export default Header

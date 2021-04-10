@@ -7,12 +7,12 @@
 
 
 @font-face {
-    font-family: sample;
+    font-family: yekan;
     src: url("./fonts/iranyekanwebregular.woff2");
 }
 
 body {
-    font-family: sample, serif;
+    font-family: yekan, traffic, tahoma, fantasy;
 }
 
 
