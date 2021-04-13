@@ -15,7 +15,6 @@ export default function Post(props) {
     const post = props?.data?.markdownRemark;
     const title = post?.frontmatter?.title;
     const image = post?.frontmatter?.thumbnail?.childImageSharp.fluid;
-    // const post = data.markdownRemark;
     return (
         <Layout>
             <Container className={"pb-5"}>
