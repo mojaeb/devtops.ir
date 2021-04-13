@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 import {graphql, useStaticQuery} from "gatsby";
 import {RiSearchLine} from 'react-icons/ri'
-
+import {Link} from 'gatsby'
 
 const MENU_ITEMS = [
     {name: "خانه", url: "/"},
@@ -18,7 +18,7 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = () => {
     const data = useStaticQuery(graphql`
         query {
-            file(id: { eq: "dbde1a11-c1f9-52c1-b046-8dd7c1e27e24" }) {
+            file(name: {eq: "icon"}) {
                 childImageSharp {
                     fixed(width: 125) {
                         ...GatsbyImageSharpFixed
@@ -28,15 +28,15 @@ const Header: React.FC<IHeaderProps> = () => {
         }
     `);
     return (
-        <nav className={"header-container bg-white sticky top-0"}>
+        <nav className={"header-container bg-white sticky top-0 z-50 relative"}>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
-                    <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <Link to={"/"} className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                         <Logo largeSrc={data.file?.childImageSharp?.fixed}/>
                         <div className={"flex space-x-4 space-x-reverse items-center"}>
                             <p className={"px-6 font-bold text-lg text-gray-600 tracking-widest"}>DEVTOPS</p>
                         </div>
-                    </div>
+                    </Link>
                     <div className="hidden sm:block sm:mr-6">
                         <div className="flex space-x-4 space-x-reverse items-center">
                             {MENU_ITEMS.map((m, i) => (
@@ -64,6 +64,9 @@ const Header: React.FC<IHeaderProps> = () => {
                         display={"block"}
                     />
                 </div>
+            </div>
+            <div className={"absolute -bottom-1 h-1 left-0 right-0 bg-gray-300 linear-progressbar-container"}>
+                <div className={"absolute top-0 bottom-0 bg-blue-500 linear-progress-bar"} style={{width: '20%'}}/>
             </div>
         </nav>
     )

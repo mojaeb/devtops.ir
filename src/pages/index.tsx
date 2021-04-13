@@ -2,47 +2,35 @@ import * as React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/Layout";
 import Container from "../components/container";
-import PostHeader from "../components/PostHeader";
+import PostHeader from "../components/post-header";
+import PostItem from '../components/post-item';
 
 
-const POSTS = [
-    {
-        title: "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی استفاده می نماید.",
-        category: "جاوااسکریپت"
-    },
-    {
-        title: "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی استفاده می نماید.",
-        category: "جاوااسکریپت"
-    },
-    {
-        title: "طراح گرافیک از این متن به عنوان عنصری ",
-        category: "جاوااسکریپت"
-    },
-    {
-        title: "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی استفاده می نماید.",
-        category: "جاوااسکریپت"
-    }
-];
 
-
-export default function IndexPage() {
-    const firstPost = POSTS[0];
+export default function IndexPage({data}) {
+    const posts = data?.allMarkdownRemark?.edges || [];
+    const pinned = data?.markdownRemark || null;
     return (
         <Layout>
             <Container>
-                {/*header post*/}
-                <PostHeader title={firstPost.title}/>
-                <div className={"grid grid-cols-3 gap-10 mt-20"}>
-                    {POSTS.map((p, i) => {
+                {pinned && (
+                    <PostHeader
+                        to={`/${pinned.frontmatter?.slug}`}
+                        title={pinned.frontmatter?.title}
+                        image={pinned.frontmatter?.thumbnail?.childImageSharp.fluid}
+                        variant={"link"}
+                    />
+                )}
+                <div className={"grid grid-cols-3 gap-x-10 gap-y-16 mt-20 pb-32"}>
+                    {posts.map(({node: {frontmatter: {title, category, thumbnail, slug = ''}}}, i) => {
                         return (
-                            <div key={i}>
-                                <div className={"bg-blue-200 h-52 rounded-md"}> </div>
-                                <div className={"w-11/12 mx-auto"}>
-                                    <p className={"mt-3 text-md text-gray-500"}>{p.category}</p>
-                                    <p className={"mt-3 text-xl"}>{p.title}</p>
-                                    <p className={"mt-4 text-xs text-gray-500"}>3 تیر 1399 / 3 دقیقه خواندن</p>
-                                </div>
-                            </div>
+                            <PostItem
+                                to={`/${slug}`}
+                                key={i}
+                                category={category}
+                                title={title}
+                                image={thumbnail?.childImageSharp?.fixed}
+                            />
                         )
                     })}
                 </div>
@@ -51,8 +39,40 @@ export default function IndexPage() {
     )
 }
 
-//
-// export const query = graphql`
-//     query {
-//     }
-// `;
+
+export const query = graphql`
+    query {
+        markdownRemark(frontmatter: {pinned: {eq: true}}) {
+            frontmatter {
+                category
+                title
+                slug
+                thumbnail {
+                    childImageSharp {
+                        fluid{
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}) {
+            edges {
+                node {
+                    frontmatter {
+                        category
+                        title
+                        slug
+                        thumbnail {
+                            childImageSharp {
+                                fixed(width: 300){
+                                    ...GatsbyImageSharpFixed
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
