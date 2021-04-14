@@ -1,0 +1,12 @@
+- id: javascript
+  name: "js"
+  color: "#f0db4f"
+- id: "rust"
+  name: "rust"
+  color: "#ce422b"
+- id: "web-development"
+  name: "web development"
+  color: "0000ff"
+- id: "gatsby"
+  name: "gatsby"
+  color: "0000ff"
