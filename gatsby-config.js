@@ -9,18 +9,12 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    `gatsby-transformer-yaml`,
     // "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "data/images/icon.png",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        color: `blue`,
-        showSpinner: true,
       },
     },
     {
@@ -65,6 +59,11 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    }, 
+    },
   ],
+  mapping: {
+    "MarkdownRemark.frontmatter.author": `AuthorYaml`,
+    "MarkdownRemark.frontmatter.category": `CategoryYaml`,
+  },
 };
+

@@ -33,18 +33,23 @@ code {
 }
 
 
-.linear-progress-bar {
-    background-color: blue;
-    width: 0;
-    animation-name: progressbar;
-    animation-duration: 30s;
+textarea:focus, input:focus, button:focus{
+    outline: none;
 }
 
-@keyframes progressbar {
-    0% {width: 0}
-    30% {width: 50%}
-    50% {width: 60%}
-    70% {width: 75%}
-    90% {width: 90%}
-    100% {width: 100%}
-}
+
+/*.linear-progress-bar {*/
+/*    background-color: blue;*/
+/*    width: 0;*/
+/*    animation-name: progressbar;*/
+/*    animation-duration: 30s;*/
+/*}*/
+
+/*@keyframes progressbar {*/
+/*    0% {width: 0}*/
+/*    30% {width: 50%}*/
+/*    50% {width: 60%}*/
+/*    70% {width: 75%}*/
+/*    90% {width: 90%}*/
+/*    100% {width: 100%}*/
+/*}*/

@@ -1,0 +1,11 @@
+- id: mojaeb
+  name: محمد جعفر ابراهیمی
+  bio: به برنامه نویسی وب علاقه مندم و دوست دارم دانشم رو ارتقا و با بقیه به اشتراک بزارم
+  image: ../images/mojaeb-profile-image.jpg
+  posts: mojaeb
+
+- id: rmohamadi
+  name: رسول محمدی
+  bio: از مشکلات نمیترسم و سعی میکنم با دقت حلشون کنم
+  image: ../images/rmohadi-profile-image.jpg
+  posts: rmohamadi
