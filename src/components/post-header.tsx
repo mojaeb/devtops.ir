@@ -23,6 +23,24 @@ interface IPostHeaderProps {
     // time?: number;
 }
 
+
+const Wrapper = ({variant, children, to, className}) => {
+    if (variant === variants.link) {
+        return (
+            <div>
+                <Link to={to} className={className}>
+                    {children}
+                </Link>
+            </div>
+        )
+    }
+    return (
+        <div className={className}>
+            {children}
+        </div>
+    )
+};
+
 const PostHeader: React.FC<IPostHeaderProps> = (
     {
         title,
@@ -34,10 +52,14 @@ const PostHeader: React.FC<IPostHeaderProps> = (
     }
 ) => {
     const isLink = variant === variants.link;
-    return React.createElement(
-        isLink ? Link : 'div',
-        {className: `flex justify-between pt-5 ${isLink ? 'lined-text' : ''}`, to: to},
-        <React.Fragment>
+
+
+    return (
+        <Wrapper
+            to={to}
+            variant={variant}
+            className={`flex justify-between pt-5 ${isLink ? 'lined-text' : ''}`}
+        >
             <div className={"w-7/12"}>
                 <div className={`block h-96 ml-4 rounded-md overflow-hidden`}>
                     {image && (
@@ -59,9 +81,12 @@ const PostHeader: React.FC<IPostHeaderProps> = (
                     )}
                 </div>
             </div>
-        </React.Fragment>
+        </Wrapper>
     )
 };
+
+
+
 
 
 export default PostHeader;
