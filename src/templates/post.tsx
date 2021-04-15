@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import Container from "../components/container";
 import PostHeader from "../components/post-header";
 import { graphql, Link } from "gatsby"

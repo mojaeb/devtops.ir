@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import PostItems from "../components/post-items";
 import {graphql, useStaticQuery} from "gatsby";
 import Container from "../components/container";
