@@ -30,6 +30,6 @@ const menuItemsCreator = (authors: Array<any> = [], categories: Array<any> = [])
             type: MenuItemTypes.link
         },
     ]
-}
+};
 
 export default menuItemsCreator;

@@ -1,6 +1,6 @@
 ---
 slug: sample1
-title: طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند
+title:  طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند
 created_at: 4-8-2021
 type: 'post'
 category: gatsby
@@ -9,7 +9,8 @@ tags:
     - gatsby
     - javascript
 author: mojaeb
-pinned: false
+datetime: "27 تیر 1400"
+pinned: true
 thumbnail: ./cover.jpeg
 ---
 

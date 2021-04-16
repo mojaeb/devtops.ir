@@ -40,7 +40,13 @@ export const query = graphql`
             totalCount
             edges {
                 node {
+                    timeToRead
                     frontmatter {
+                        category {
+                            name
+                            id
+                        }
+                        datetime
                         title
                         slug
                         author {

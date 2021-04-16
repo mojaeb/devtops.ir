@@ -8,12 +8,20 @@ interface IPostItemProps {
     category?: string;
     image?: any;
     to?:string;
+    datetime?: string | null
+    timeToRead?: number | null;
 }
 
 
 // TODO add publish date and read time properties
 const PostItem: React.FC<IPostItemProps> = (
-    { title="", category="", to="", image}
+    {
+        title="",
+        category="",
+        to="", image,
+        datetime = "",
+        timeToRead
+    }
 ) => {
     return (
         <Link to={to} className={"lined-text"}>
@@ -25,7 +33,7 @@ const PostItem: React.FC<IPostItemProps> = (
                 <p className={"mt-3 text-xl text-animated-bg-line"}>
                     <span>{title}</span>
                 </p>
-                <p className={"mt-4 text-xs text-gray-500"}>3 تیر 1399 / 3 دقیقه خواندن</p>
+                <p className={"mt-4 text-xs text-gray-500"}>{datetime}  / {timeToRead} دقیقه خواندن</p>
             </div>
         </Link>
     )

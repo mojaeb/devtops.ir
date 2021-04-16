@@ -31,7 +31,11 @@ function SearchBox(
                 className={"bg-black bg-opacity-70 absolute flex flex-col top-full left-0 right-0"}
                 style={resultSearchAnimationProps}>
                 {searchResult.map((sr, i) => (
-                    <Link to={sr.to} className={"px-10 py-3 text-white hover:bg-blue-700"} key={i}>
+                    <Link
+                        to={sr.to}
+                        className={"px-10 py-3 text-white hover:bg-blue-700"}
+                        key={i}
+                    >
                         {sr.title}
                     </Link>
                 ))}

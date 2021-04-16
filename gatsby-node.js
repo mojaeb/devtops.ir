@@ -2,21 +2,6 @@ const path = require(`path`);
 
 
 
-// exports.createSchemaCustomization = ({actions}) => {
-//     const {createTypes} = actions;
-//     const typeDefs =  `
-//     type MarkdownRemark implements Node {
-//         frontmatter: Frontmatter
-//     }
-//     type Frontmatter {
-//         author: AuthorsYaml @link(by: "id")
-//     }
-//     `;
-//     createTypes(typeDefs)
-// };
-
-
-
 exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions;
     const result = await graphql(`
@@ -74,7 +59,4 @@ exports.createPages = async ({graphql, actions}) => {
             },
         });
     })
-
-
-
 };

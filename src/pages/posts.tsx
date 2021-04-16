@@ -12,9 +12,15 @@ export default function Posts() {
                 totalCount
                 edges {
                     node {
+                        timeToRead
                         frontmatter {
+                            datetime
                             title
                             slug
+                            category {
+                                name
+                                id
+                            }
                             author {
                                 bio
                                 name

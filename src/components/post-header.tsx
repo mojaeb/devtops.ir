@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Link} from 'gatsby';
 import Img from "gatsby-image";
+import AuthorInfo from "./author-info";
 
 enum variants {
     plain = 'plain',
@@ -18,8 +19,10 @@ interface IPostHeaderProps {
     variant?: 'plain' | 'link';
     image?: any;
     to?:string;
-    author?: string;
+    author?: any;
     category?: ICategoryProps;
+    timeToRead?: number;
+    datetime?: string | null;
     // time?: number;
 }
 
@@ -47,8 +50,10 @@ const PostHeader: React.FC<IPostHeaderProps> = (
         variant = variants.plain,
         image,
         to="",
-        author = "",
-        category= {name: "", id: ""}
+        author,
+        category= {name: "", id: ""},
+        timeToRead = null,
+        datetime,
     }
 ) => {
     const isLink = variant === variants.link;
@@ -73,12 +78,19 @@ const PostHeader: React.FC<IPostHeaderProps> = (
                    style={{lineHeight: '3rem'}}>
                     <span>{title}</span>
                 </p>
-                <p>نویسنده: {author}</p>
-                <div className={"pb-4 pt-4 flex justify-between relative"}>
-                    <p className={"text-gray-500"}>3 تیر 1399 / 3 دقیقه خواندن</p>
-                    {isLink && (
-                        <p className={"mx-auto rounded-md bg-blue-200 text-blue-600 px-6 py-2 absolute bottom-5 left-0"}>مطالعه</p>
-                    )}
+                <div className={"flex flex-col justify-end"}>
+                    <AuthorInfo
+                        slug={author.id}
+                        fixedImage={author?.image?.childImageSharp.fixed}
+                        name={author.name}
+                        className={"my-2"}
+                    />
+                    <div className={" flex justify-between items-center relative"}>
+                        <p className={"text-gray-500"}>{datetime}  / {timeToRead} دقیقه خواندن</p>
+                        {isLink && (
+                            <p className={"rounded-md bg-blue-200 text-blue-600 px-6 py-2"}>مطالعه</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </Wrapper>

@@ -1,25 +1,23 @@
 import * as React from 'react'
-import {graphql} from "gatsby"
+import {graphql, Link} from "gatsby"
 import Layout from "../components/layout";
 import Container from "../components/container";
 import PostHeader from "../components/post-header";
-import PostItem from '../components/post-item';
-import {Link} from 'gatsby';
 import PostItems from "../components/post-items";
-
 
 
 export default function IndexPage({data}) {
     const posts = data?.allMarkdownRemark?.edges || [];
     const pinned = data?.markdownRemark || null;
     const totalCount = data?.allMarkdownRemark?.totalCount;
-    console.log(posts, pinned, data.allMarkdownRemark.totalCount);
     return (
         <Layout>
             <Container>
                 {pinned && (
                     <PostHeader
-                        author={pinned?.frontmatter?.author?.name}
+                        timeToRead={pinned?.timeToRead}
+                        datetime={pinned?.frontmatter?.datetime}
+                        author={pinned?.frontmatter?.author}
                         to={`/${pinned.frontmatter?.slug}`}
                         title={pinned.frontmatter?.title}
                         image={pinned.frontmatter?.thumbnail?.childImageSharp.fluid}
@@ -45,16 +43,25 @@ export default function IndexPage({data}) {
 export const query = graphql`
     query {
         markdownRemark(frontmatter: {pinned: {eq: true}}) {
+            timeToRead
             frontmatter {
                 title
+                datetime
                 slug
                 category {
                     name
                     id
                 }
                 author {
-                    bio
                     name
+                    id
+                    image {
+                        childImageSharp {
+                            fixed(width: 100) {
+                                ...GatsbyImageSharpFixed
+                            }
+                        }
+                    }
                 }
                 thumbnail {
                     childImageSharp {
@@ -69,7 +76,9 @@ export const query = graphql`
             totalCount
             edges {
                 node {
+                    timeToRead
                     frontmatter {
+                        datetime
                         title
                         category {
                             name
@@ -77,8 +86,8 @@ export const query = graphql`
                         }
                         slug
                         author {
-                            bio
                             name
+                            id
                         }
                         thumbnail {
                             childImageSharp {

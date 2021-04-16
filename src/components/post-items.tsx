@@ -8,25 +8,44 @@ interface IPostItemsProps {
     posts: Array<any>; // post nodes
 }
 
+
+const TEXTS = {
+    notFount: "هیچ موردی یافت نشد!",
+    goBack: "بازگشت به ",
+    home: "خانه",
+    unCategorized: "بدون دسته بندی"
+};
+
+
 const PostItems: React.FC<IPostItemsProps> = ({posts = []}) => {
     if (posts.length === 0) {
         return (
             <div className={"flex justify-center items-center mt-32 flex-col"}>
                 <div><MdMoodBad className={"text-gray-300"} size={90}/></div>
-                <p className={"mt-5 text-gray-500"}>هیچ موردی یافت نشد!</p>
-                <p className={"mt-5 text-gray-500"}>بازگشت به <Link className={"text-blue-500"} to={"/"}>خانه</Link></p>
+                <p className={"mt-5 text-gray-500"}>
+                    {TEXTS.notFount}
+                </p>
+                <p className={"mt-5 text-gray-500"}>
+                    {TEXTS.goBack}
+                    <Link className={"text-blue-500"} to={"/"}>
+                        {TEXTS.home}
+                    </Link>
+                </p>
             </div>
         )
     }
     return (
-        <div className={"grid grid-cols-3 gap-x-10 gap-y-16 mt-20"}>
-            {posts.map(({node: {frontmatter: {title, thumbnail, slug = ''}}}, i) => {
+        <div className={"grid grid-cols-3 gap-x-10 gap-y-16 mt-20 pb-10"}>
+            {posts.map(({node: {frontmatter, timeToRead}}, i) => {
+                const {title, thumbnail, slug = '', category, datetime} = frontmatter;
                 return (
                     <PostItem
                         to={`/${slug}`}
                         key={i}
-                        category={"category"}
+                        category={category?.name || TEXTS.unCategorized}
                         title={title}
+                        datetime={datetime}
+                        timeToRead={timeToRead}
                         image={thumbnail?.childImageSharp?.fixed}
                     />
                 )
