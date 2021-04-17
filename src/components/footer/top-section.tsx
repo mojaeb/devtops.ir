@@ -18,7 +18,7 @@ interface ITopSectionProps {
 
 const TopSection: React.FC<ITopSectionProps> = ({telegramText, telegramLink, links}) => {
     return (
-        <div className={"bg-gray-800 py-5 px-20 flex justify-between items-center"}>
+        <div className={"bg-gray-800 py-5 sm:px-20 px-5 flex justify-between items-center"}>
             <div className={"text-white text-sm flex gap-5"}>
                 {links.map((l: ILink, i: number) => (<Link key={i} to={l.url}>{l.text}</Link>))}
             </div>
@@ -33,6 +33,6 @@ const TopSection: React.FC<ITopSectionProps> = ({telegramText, telegramLink, lin
             </a>
         </div>
     );
-}
+};
 
 export default TopSection;
