@@ -26,7 +26,7 @@ const menuItemsCreator = (authors: Array<any> = [], categories: Array<any> = [])
         },
         {
             name: "درباره ما",
-            to: "/project",
+            to: "/about-us",
             type: MenuItemTypes.link
         },
     ]

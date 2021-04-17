@@ -85,7 +85,7 @@ const PostHeader: React.FC<IPostHeaderProps> = (
                         name={author.name}
                         className={"my-2"}
                     />
-                    <div className={" flex justify-between items-center relative"}>
+                    <div className={"flex justify-between items-end"}>
                         <p className={"text-gray-500"}>{datetime}  / {timeToRead} دقیقه خواندن</p>
                         {isLink && (
                             <p className={"rounded-md bg-blue-200 text-blue-600 px-6 py-2"}>مطالعه</p>
