@@ -29,10 +29,33 @@ body {
 code {
     direction: ltr!important;
 }
+code {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
 
 textarea:focus, input:focus, button:focus{
     outline: none;
+}
+
+.main-text h1 {
+    font-size: 4rem;
+    line-height: normal;
+}
+.main-text h2 {
+    font-size: 3rem;
+    line-height: normal;
+}
+.main-text h3 {
+    font-size: 2rem;
+    line-height: normal;
+}
+
+@media only screen and (min-width: 1024px) {
+    .main-text {
+        line-height: 2.3rem !important;
+    }
 }
 
 

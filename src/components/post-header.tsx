@@ -75,7 +75,11 @@ const PostHeader: React.FC<IPostHeaderProps> = (
                 </div>
             </div>
             <div className={"w-full md:w-5/12 px-7 flex flex-col"}>
-                <Link to={`/category/${category.id}`} className={"pb-3 lg:pb-8 pt-4 text-lg text-gray-500"}>{category.name}</Link>
+                <Link
+                    to={`/category/${category.id}`}
+                    className={"mb-2 py-2 hover:text-blue-600 rounded-md px-3 hover:bg-gray-200 lg:mb-5 text-lg text-gray-500"}>
+                    {category.name}
+                </Link>
                 <div className={"flex-1 relative"}>
                     <div
                         className={`text-3xl lg:text-4xl font-normal font-medium ellipsis-multi-line-text ${Styles.headerTitleText}`}
