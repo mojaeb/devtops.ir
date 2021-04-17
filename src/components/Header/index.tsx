@@ -7,7 +7,7 @@ import SearchBox from "./search-box";
 import MenuItems from "./menu-items";
 import {MenuItemTypes} from "./menu-item";
 import {Link} from "gatsby";
-import {RiMenu3Line} from  "react-icons/ri"
+import {RiCloseFill, RiMenu3Line, RiSearchLine} from "react-icons/ri"
 
 const useMenu = () => {
     const [state, setState] = React.useState(false);
@@ -81,7 +81,16 @@ const Header = () => {
                         </div>
                     )}
 
-
+                    <button
+                        onMouseUp={onToggleSearchBox}
+                        className={"pr-10 pl-5 sm:pl-0"}
+                    >
+                        {openSearchBox ? (
+                            <RiCloseFill size={23}/>
+                        ) : (
+                            <RiSearchLine size={23}/>
+                        )}
+                    </button>
                 </div>
             </div>
             <SearchBox

@@ -18,16 +18,7 @@ function MenuItems(
                         {...m}
                     />
                 ))}
-                <button
-                    onMouseUp={onToggleSearchBox}
-                    className={"pr-10"}
-                >
-                    {openSearchBox ? (
-                        <RiCloseFill size={23}/>
-                    ) : (
-                        <RiSearchLine size={23}/>
-                    )}
-                </button>
+
 
             </div>
         </div>

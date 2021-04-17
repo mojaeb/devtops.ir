@@ -67,8 +67,8 @@ const PostHeader: React.FC<IPostHeaderProps> = (
             variant={variant}
             className={`flex md:flex-row flex-col justify-between pt-5 ${isLink ? 'lined-text' : ''}`}
         >
-            <div className={"w-full md:w-7/12"}>
-                <div className={`block h-96 ml-4 rounded-md overflow-hidden`}>
+            <div className={"w-full md:w-7/12 px-3 sm:p-0"}>
+                <div className={`block h-96 ml-4 w-full rounded-md overflow-hidden`}>
                     {image && (
                         <Img style={{height: '100%'}} fluid={image}/>
                     )}
