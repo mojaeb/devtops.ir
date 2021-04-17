@@ -51,3 +51,14 @@ textarea:focus, input:focus, button:focus{
 /*    90% {width: 90%}*/
 /*    100% {width: 100%}*/
 /*}*/
+
+
+.ellipsis-multi-line-text {
+    overflow: hidden;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+

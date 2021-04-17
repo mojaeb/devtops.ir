@@ -35,7 +35,7 @@ const PostItems: React.FC<IPostItemsProps> = ({posts = []}) => {
         )
     }
     return (
-        <div className={"grid grid-cols-3 gap-x-10 gap-y-16 mt-20 pb-10"}>
+        <div className={"grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-16 mt-20 pb-10 mx-4 sm:mx-0"}>
             {posts.map(({node: {frontmatter, timeToRead}}, i) => {
                 const {title, thumbnail, slug = '', category, datetime} = frontmatter;
                 return (

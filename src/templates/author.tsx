@@ -13,14 +13,14 @@ export default function Posts({data}) {
     return (
         <Layout>
     <div className={"bg-white"}>
-        <Container className={"flex flex-direction-row px-32 py-10"}>
+        <Container className={"flex flex-wrap md:justify-start justify-center lg:px-32 px-10 py-10"}>
             <div className={"w-32 h-32 bg-blue-500 rounded-md overflow-hidden"}>
                 <Img fixed={image} style={{width: '100%', height: '100%'}}/>
             </div>
-            <div className={"px-10 py-5"}>
+            <div className={"px-0 sm:px-10 py-5 flex flex-col md:items-start items-center"}>
                 <p className={"text-md"}>{name}</p>
-                <div className={"flex flex-direction-row items-center justify-between"}>
-                    <p className={"text-sm text-gray-400 pt-3 w-8/12"}>{bio}</p>
+                <div>
+                    <p className={"text-sm text-gray-400 pt-3 lg:w-8/12 text-center sm:text-right"}>{bio}</p>
                 </div>
             </div>
         </Container>

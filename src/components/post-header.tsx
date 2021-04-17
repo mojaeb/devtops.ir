@@ -2,6 +2,8 @@ import * as React from 'react';
 import {Link} from 'gatsby';
 import Img from "gatsby-image";
 import AuthorInfo from "./author-info";
+// @ts-ignore
+import * as Styles from '../styles/post-header.module.css';
 
 enum variants {
     plain = 'plain',
@@ -63,21 +65,25 @@ const PostHeader: React.FC<IPostHeaderProps> = (
         <Wrapper
             to={to}
             variant={variant}
-            className={`flex justify-between pt-5 ${isLink ? 'lined-text' : ''}`}
+            className={`flex md:flex-row flex-col justify-between pt-5 ${isLink ? 'lined-text' : ''}`}
         >
-            <div className={"w-7/12"}>
+            <div className={"w-full md:w-7/12"}>
                 <div className={`block h-96 ml-4 rounded-md overflow-hidden`}>
                     {image && (
-                        <Img fluid={image}/>
+                        <Img style={{height: '100%'}} fluid={image}/>
                     )}
                 </div>
             </div>
-            <div className={"w-5/12 px-7 flex flex-col"}>
-                <Link to={`/category/${category.id}`} className={"pb-8 pt-4 text-lg text-gray-500"}>{category.name}</Link>
-                <p className={`text-4xl font-normal font-medium flex-1`}
-                   style={{lineHeight: '3rem'}}>
-                    <span>{title}</span>
-                </p>
+            <div className={"w-full md:w-5/12 px-7 flex flex-col"}>
+                <Link to={`/category/${category.id}`} className={"pb-3 lg:pb-8 pt-4 text-lg text-gray-500"}>{category.name}</Link>
+                <div className={"flex-1 relative"}>
+                    <div
+                        className={`text-3xl lg:text-4xl font-normal font-medium ellipsis-multi-line-text ${Styles.headerTitleText}`}
+
+                    >
+                        <span>{title}</span>
+                    </div>
+                </div>
                 <div className={"flex flex-col justify-end"}>
                     <AuthorInfo
                         slug={author.id}
