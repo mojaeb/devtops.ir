@@ -91,6 +91,7 @@ const Header = () => {
 
                     <button
                         onMouseUp={onToggleSearchBox}
+                        name={"search-button"}
                         className={"pr-10 pl-5 sm:pl-0"}
                     >
                         {openSearchBox ? (

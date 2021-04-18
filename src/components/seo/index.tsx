@@ -20,7 +20,7 @@ const SEO: React.FC<ISEOProps> = ({title = null, description = null, image = nul
         titleTemplate,
         defaultDescription,
         siteUrl,
-        defaultImage,
+        image: defaultImage,
     } = site.siteMetadata;
     const seo = {
         title: title || defaultTitle,
@@ -56,8 +56,8 @@ const query = graphql`
                 defaultTitle: title
                 titleTemplate
                 defaultDescription: description
-                siteUrl: url
-                defaultImage: image
+                siteUrl
+                image
             }
         }
     }

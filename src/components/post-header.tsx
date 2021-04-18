@@ -77,7 +77,7 @@ const PostHeader: React.FC<IPostHeaderProps> = (
             <div className={"w-full md:w-5/12 px-5 sm:px-7 flex flex-col"}>
                 <Link
                     to={`/category/${category.id}`}
-                    className={"mb-2 py-2 hover:text-blue-600 rounded-md sm:px-3 hover:bg-gray-200 lg:mb-5 sm:text-lg text-gray-500"}>
+                    className={"mb-2 py-2 hover:text-blue-600 rounded-md sm:px-3 hover:bg-gray-200 lg:mb-5 sm:text-lg text-gray-600"}>
                     {category.name}
                 </Link>
                 <div className={"flex-1 relative"}>

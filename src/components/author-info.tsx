@@ -34,11 +34,11 @@ const AuthorInfo: React.FC<IAuthorInfoProps> = (
                 <Img fixed={fixedImage} style={{width: '100%', height: '100%'}}/>
             </div>
             <div>
-                <p className={`${size === Size.md ? "text-sm" : "text-xs"} text-gray-500`}>نویسنده</p>
-                <p className={size === Size.md ? "text-lg" : "text-md"}>{name}</p>
+                <p className={`${size === Size.md ? "text-sm" : "text-xs sm:text-sm"} text-gray-600`}>نویسنده</p>
+                <p className={size === Size.md ? "text-lg" : "text-md sm:text-lg"}>{name}</p>
             </div>
         </Link>
     );
-}
+};
 
 export default AuthorInfo;
