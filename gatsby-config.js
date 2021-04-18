@@ -18,6 +18,12 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "data/images/icon.png",
+        name: `Devtops`,
+        short_name: `Devtops`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#0A0EFF`,
+        display: `standalone`,
       },
     },
     {
