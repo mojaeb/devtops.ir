@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes} dir={"rtl"}>
+    <html {...props.htmlAttributes} lang={"fa"} dir={"rtl"}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -11,6 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+          <meta name="google-site-verification" content="google-site-verification=NqyD3H7BsvtpUmy9iA2eUn13pkkA-r_VCCOUy0Ncuyw"/>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

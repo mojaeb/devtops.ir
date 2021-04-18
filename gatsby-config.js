@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     `gatsby-transformer-yaml`,
     "gatsby-plugin-sitemap",
+    'gatsby-plugin-robots-txt',
     {
       resolve: "gatsby-plugin-manifest",
       options: {

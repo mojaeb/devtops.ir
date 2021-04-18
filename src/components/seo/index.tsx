@@ -28,6 +28,10 @@ const SEO: React.FC<ISEOProps> = ({title = null, description = null, image = nul
         image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname}`,
     };
+
+
+
+
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta name="description" content={seo.description}/>
