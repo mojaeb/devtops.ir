@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import PostItems from "../components/post-items";
 import {graphql, useStaticQuery} from "gatsby";
 import Container from "../components/container";
+import SEO from "../components/seo";
 
 
 export default function Posts() {
@@ -40,6 +41,7 @@ export default function Posts() {
     `);
     return (
         <Layout>
+            <SEO title={`همه مطالب`} />
             <Container className={"pb-20"}>
                 <PostItems posts={data?.allMarkdownRemark?.edges || []}/>
             </Container>

@@ -12,12 +12,14 @@ const MenuPopper: React.FC<IMenuPopperProps> = ({items, anchor, onClose}) => {
     if (!anchor) {
         return null
     }
+    const {x, y, height, width} = anchor?.getBoundingClientRect() || {x: 0, y: 0, height: 0, width: 0};
+    console.log(anchor?.getBoundingClientRect());
     return (
-        <div className={"fixed top-0 bottom-0 left-0 right-0 z-20"} onClick={onClose}>
+        <div className={"fixed inset-0 z-20"} onClick={onClose}>
             <div
                 style={{
-                    left: anchor.offsetLeft + anchor.offsetWidth | 0,
-                    top: anchor.offsetTop + anchor.offsetHeight + 10
+                    left: x - (width/2),
+                    top: y + (height / 2),
                 }}
                 className="origin-top-right z-50 absolute mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                 role="menu"

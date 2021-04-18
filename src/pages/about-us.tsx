@@ -5,11 +5,13 @@ import Container from "../components/container";
 import Img from "gatsby-image";
 import {MdEmail} from 'react-icons/md'
 import {FaTelegramPlane} from 'react-icons/fa'
+import SEO from "../components/seo";
 
 
 function AboutUs({data}) {
     return (
         <Layout>
+            <SEO title={`درباره ما`} />
             <div className={"h-40 bg-blue-700"}/>
             <Container>
                 <div className={"flex justify-start flex-col md:flex-row"}>

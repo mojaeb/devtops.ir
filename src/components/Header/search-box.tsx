@@ -23,7 +23,7 @@ function SearchBox(
                     value={searchText}
                     onChange={onChangeSearchText}
                     style={{height: '100%', width: '100%'}}
-                    className={"px-20 text-2xl text-gray-500"}
+                    className={"px-5 sm:px-20 text-2xl text-gray-500"}
                     ref={searchInputRef}
                 />
             </div>

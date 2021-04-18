@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import PostHeader from "../components/post-header";
 import PostItems from "../components/post-items";
+import SEO from "../components/seo";
 
 
 export default function IndexPage({data}) {
@@ -12,6 +13,7 @@ export default function IndexPage({data}) {
     const totalCount = data?.allMarkdownRemark?.totalCount;
     return (
         <Layout>
+            <SEO title={`خانه`} description={"برترین مطالب برای برترین ها"} />
             <Container>
                 {pinned && (
                     <PostHeader

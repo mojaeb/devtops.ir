@@ -9,10 +9,13 @@ import {MenuItemTypes} from "./menu-item";
 import {Link} from "gatsby";
 import {RiCloseFill, RiMenu3Line, RiSearchLine} from "react-icons/ri"
 
+
+type ToggleMenuProps = any
+
 const useMenu = () => {
-    const [state, setState] = React.useState(false);
-    const handleToggleMenu = (_event: MouseEvent) :void => {
-        setState(!state)
+    const [state, setState] = React.useState<boolean | undefined>(false);
+    const handleToggleMenu: ToggleMenuProps = (_event) => {
+        setState(!state);
     };
     return [state, handleToggleMenu]
 };
@@ -46,7 +49,12 @@ const Header = () => {
         <nav className={"header-container bg-white sticky top-0 z-50 relative"}>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
-                    <button className={"pl-5 block sm:hidden"} onClick={setToggleMenu}><RiMenu3Line size={30}/></button>
+                    <button
+                        className={"pl-5 block sm:hidden"}
+                        onClick={() => setToggleMenu()}
+                    >
+                        <RiMenu3Line size={30}/>
+                    </button>
                     <Logo largeSrc={data.file?.childImageSharp?.fixed}/>
                     <MenuItems
                         items={menuItems}
@@ -56,7 +64,7 @@ const Header = () => {
 
                     {openMenuStatus && (
                         <div className={"fixed z-50"}>
-                            <div onClick={setToggleMenu} className={"bg-black fixed inset-0 z-50 k bg-opacity-70 block sm:hidden"}/>
+                            <div onClick={() => setToggleMenu()} className={"bg-black fixed inset-0 z-50 k bg-opacity-70 block sm:hidden"}/>
                             <div className={"bg-white pt-5 top-0 w-9/12 right-0 bottom-0 fixed z-50 sm:hidden"}>
                                 <div className={"mx-5"}><Logo largeSrc={data.file?.childImageSharp?.fixed}/></div>
                                 <br/>

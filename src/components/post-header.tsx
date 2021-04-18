@@ -65,26 +65,23 @@ const PostHeader: React.FC<IPostHeaderProps> = (
         <Wrapper
             to={to}
             variant={variant}
-            className={`flex md:flex-row flex-col justify-between pt-5 ${isLink ? 'lined-text' : ''}`}
+            className={`flex md:flex-row flex-col justify-between sm:pt-5 ${isLink ? 'lined-text' : ''}`}
         >
-            <div className={"w-full md:w-7/12 px-3 sm:p-0"}>
-                <div className={`block h-96 ml-4 w-full rounded-md overflow-hidden`}>
+            <div className={"w-full md:w-7/12 px-2 sm:px-3 sm:p-0"}>
+                <div className={`block h-52 sm:h-96 ml-4 w-full rounded-md overflow-hidden`}>
                     {image && (
                         <Img style={{height: '100%'}} fluid={image}/>
                     )}
                 </div>
             </div>
-            <div className={"w-full md:w-5/12 px-7 flex flex-col"}>
+            <div className={"w-full md:w-5/12 px-5 sm:px-7 flex flex-col"}>
                 <Link
                     to={`/category/${category.id}`}
-                    className={"mb-2 py-2 hover:text-blue-600 rounded-md px-3 hover:bg-gray-200 lg:mb-5 text-lg text-gray-500"}>
+                    className={"mb-2 py-2 hover:text-blue-600 rounded-md sm:px-3 hover:bg-gray-200 lg:mb-5 sm:text-lg text-gray-500"}>
                     {category.name}
                 </Link>
                 <div className={"flex-1 relative"}>
-                    <div
-                        className={`text-3xl lg:text-4xl font-normal font-medium ellipsis-multi-line-text ${Styles.headerTitleText}`}
-
-                    >
+                    <div className={`text-xl sm:text-3xl lg:text-4xl font-normal font-medium ellipsis-multi-line-text ${Styles.headerTitleText}`}>
                         <span>{title}</span>
                     </div>
                 </div>
@@ -93,12 +90,13 @@ const PostHeader: React.FC<IPostHeaderProps> = (
                         slug={author.id}
                         fixedImage={author?.image?.childImageSharp.fixed}
                         name={author.name}
+                        size={"sm"}
                         className={"my-2"}
                     />
-                    <div className={"flex justify-between items-end"}>
+                    <div className={"flex justify-between items-end text-sm sm:text-md"}>
                         <p className={"text-gray-500"}>{datetime}  / {timeToRead} دقیقه خواندن</p>
                         {isLink && (
-                            <p className={"rounded-md bg-blue-200 text-blue-600 px-6 py-2"}>مطالعه</p>
+                            <p className={"rounded-md bg-blue-200 text-xs sm:text-md text-blue-600 px-6 py-2"}>مطالعه</p>
                         )}
                     </div>
                 </div>

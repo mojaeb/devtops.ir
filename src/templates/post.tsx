@@ -6,6 +6,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image";
 import AuthorInfo from "../components/author-info";
 import Tags from "../components/tags";
+import SEO from "../components/seo";
 
 
 
@@ -13,6 +14,7 @@ import Tags from "../components/tags";
 export default function Post(props) {
     const post = props?.data?.markdownRemark;
     const title = post?.frontmatter?.title;
+    const description = post?.frontmatter?.description;
     const image = post?.frontmatter?.thumbnail?.childImageSharp.fluid;
     const author = post?.frontmatter?.author;
     const authorName = post?.frontmatter?.author?.name;
@@ -24,7 +26,8 @@ export default function Post(props) {
     const datetime = post?.frontmatter?.datetime || "";
     return (
         <Layout>
-            <Container className={"pb-5"}>
+            <SEO title={title} image={image?.src} article={true} description={description}/>
+            <Container className={"sm:pb-5"}>
                 <PostHeader
                     author={author}
                     title={title}
@@ -64,6 +67,7 @@ export const query = graphql`
             frontmatter {
                 title
                 tags
+                description
                 datetime
                 category {
                     name

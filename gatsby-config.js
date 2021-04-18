@@ -1,16 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: "devtops-ir",
+    title: "devtops",
+    titleTemplate: "%s · برترین مطالب برای برترین ها",
+    description: "برترین مطالب برنامه نویسی برای برترین ها",
+    url: "https://www.devtops.ir",
+    image: "/data/images/devtops.png",
   },
   plugins: [
-    // "gatsby-plugin-sass", // current unused sass file
-                            // when intend to create sass you can remove comment and enable
+    // "gatsby-plugin-sass",
     'gatsby-plugin-postcss',
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     `gatsby-transformer-yaml`,
-    // "gatsby-plugin-sitemap",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {

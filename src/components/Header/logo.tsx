@@ -29,7 +29,7 @@ const Logo: React.FC<ILogoProps> = (
                 />
             </div>
             <div className={"flex space-x-4 space-x-reverse items-center"}>
-                <p className={"px-6 font-bold text-lg text-gray-600 tracking-widest"}>DEVTOPS</p>
+                <p className={"px-3 sm:px-6 font-bold text-lg text-gray-600 tracking-widest"}>DEVTOPS</p>
             </div>
         </Link>
     );

@@ -3,12 +3,14 @@ import Layout from "../components/layout";
 import {graphql} from "gatsby";
 import PostItems from "../components/post-items";
 import Container from "../components/container";
+import SEO from "../components/seo";
 
 export default function RelatedCategoryPosts({data}) {
     const posts = data?.allMarkdownRemark?.edges || [];
     const name = data?.categoryYaml?.name;
     return (
         <Layout>
+            <SEO title={`مطالب ${name}`} />
             <div className={"bg-white"}>
                 <Container className={"flex flex-direction-row"} style={{paddingTop: '2rem', paddingBottom: "2rem"}}>
                     <div className={"text-md flex items-center"}>
