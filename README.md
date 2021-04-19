@@ -1,48 +1,44 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://devtops.ir">
+    <img alt="devtops" src="./docs/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Devtops
 </h1>
 
-## 🚀 Quick start
+minimalist weblog created with gatsby and typescript and use markdown(md) file for manage and generate posts
 
-1.  **Create a Gatsby site.**
+## Demo
+[devtops.ir](https://devtops.ir)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## pages
+- home (index)
+- all posts
+- single post
+- author posts
+- category posts
+- about us
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
 
-2.  **Start developing.**
+## dependencies
+- gatsby
+- gatsby-plugin-typescript
+- tailwindcss
+- markdown-remarker
+- react-spring
+- and other packages for use seo and increase performances
 
-    Navigate into your new site’s directory and start it up.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+**How run this Project**
+```shell
+git clone https://github.com/mojaeb/devtops.ir.git
 
-3.  **Open the code and start customizing!**
+cd devtops.ir
 
-    Your site is now running at http://localhost:8000!
+npm install
 
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+npm run develop
+# or
+gatsby develop
+```
