@@ -4,3 +4,6 @@
 - id: python
   name: "پایتون"
   color: "#306998"
+- id: go
+  name: "گو"
+  color: "#28cfff"

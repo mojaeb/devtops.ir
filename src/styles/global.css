@@ -51,6 +51,10 @@ textarea:focus, input:focus, button:focus{
     font-size: 2rem;
     line-height: normal;
 }
+.main-text h4 {
+    font-size: 1.5rem;
+    line-height: normal;
+}
 
 @media only screen and (min-width: 1024px) {
     .main-text {
