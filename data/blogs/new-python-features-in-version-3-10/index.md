@@ -1,6 +1,6 @@
 ---
 slug: python-new-features-in-version-3.10-part-1-matches
-title:  قابلیت های جدید پایتون در نسخه 3.10 قسمت اول سوییچ (matches)
+title:  قابلیت های جدید پایتون در نسخه 3.10 قسمت اول matches
 created_at: 4-8-2021
 type: 'post'
 category: python
