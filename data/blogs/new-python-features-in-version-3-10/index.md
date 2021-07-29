@@ -1,6 +1,6 @@
 ---
 slug: python-new-features-in-version-3.10-part-1-matches
-title:  قابلیت های جدید پایتون در نسخه 3.10 قسمت اول سوییچ (matches)
+title:  قابلیت های جدید پایتون در نسخه 3.10 قسمت اول - الگو های مرتبط (matches)
 created_at: 4-8-2021
 type: 'post'
 category: python
@@ -10,7 +10,7 @@ author: mojaeb
 datetime: "6 اردیبهشت 1400"
 pinned: true
 thumbnail: ./cover.jpg
-description: بررسی ویژگی های جدید پایتون در نسخه 3.10 که در این قسمت به بررسی سوییچ در پایتون میپردازم
+description: بررسی ویژگی های جدید پایتون در نسخه 3.10 که در این قسمت به بررسی الگو های مرتبط یا "matches patterns" در پایتون میپردازم
 ---
 
 
