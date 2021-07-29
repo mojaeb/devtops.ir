@@ -41,7 +41,7 @@ export default function Post(props) {
             </Container>
             <div className="bg-white">
                 <div className={"mx-auto container w-full lg:w-6/12 px-7 md:px-0 pt-20"}>
-                    <div
+                    <section
                         className={"leading-relaxed text-md sm:text-lg main-text"}
                         dangerouslySetInnerHTML={{__html: post.html}}
                     />
