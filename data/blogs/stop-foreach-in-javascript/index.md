@@ -11,7 +11,7 @@ tags:
 author: mojaeb
 datetime: "28 فروردین 1400"
 pinned: true
-thumbnail: ./cover.jpeg
+thumbnail: ./cover.jpg
 description: در جاوااسکریپت خارج شدن از foreach کار شاید آسونی نباشه ما تو این مطلب راجب این مبحث توضیح میدیم
 ---
 
