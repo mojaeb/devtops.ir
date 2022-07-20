@@ -34,6 +34,7 @@ const SEO: React.FC<ISEOProps> = ({title = null, description = null, image = nul
 
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
+            <meta name="google-site-verification" content="NqyD3H7BsvtpUmy9iA2eUn13pkkA-r_VCCOUy0Ncuyw" />
             <meta name="description" content={seo.description}/>
             <meta name="image" content={seo.image}/>
             {seo.url && <meta property="og:url" content={seo.url}/>}
